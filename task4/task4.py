@@ -2,12 +2,12 @@ def min_moves(filepath):
   
     with open(filepath, 'r') as file:
         nums = [int(x) for x in file]
-
-    average = round(sum(nums) / len(nums))
+    
+    median = sorted(nums)[len(nums) // 2]
 
     moves = 0
     for num in nums:
-        moves += abs(num - average)
+        moves += abs(num - median)
 
     print(moves)
 
